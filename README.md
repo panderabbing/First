@@ -1,4 +1,6 @@
 # First
 My first repository. Co-author: Felix Blom
 
-Hello world! This is Pander and Felix. We are about to become the best GitHub users in the game. Talk soon. Getting better already... IK VERANDER IETS ANDERS
+Hello world! This is Pander and Felix. We are about to become the best GitHub users in the game. Talk soon. Getting better already...
+HAHA IK VERANDER IETS
+
