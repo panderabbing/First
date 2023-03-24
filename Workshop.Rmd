@@ -1,0 +1,40 @@
+---
+title: "Workshop"
+author: "Pander Abbing"
+date: '2023-03-22'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      warning = FALSE, 
+                      message = FALSE)
+```
+
+```{r import necessary packages}
+library(devtools)
+library(tidyverse)
+```
+
+## Workshop
+### Assignment
+
+Here, I source the file from GitHub directly. I will show the first six lines of the Stroop data by using `head()`.
+
+```{r source data from github} 
+source("https://raw.githubusercontent.com/PerceptionCognitionLab/data0/master/contexteffects/FlankerStroopSimon/cleaning.R")
+head(stroop)
+```
+
+Next, I will conduct a paired t-test on aggregated data. I will aggregate the data by calculating the mean response time per person, per condition. The output will show the results of the t-test. 
+
+```{r Paired T-Test}
+data = stroop %>%
+  group_by(ID, cond) %>%
+  summarise(mean_rt = mean(rt))
+
+t.test(mean_rt ~ cond,
+       data = data,
+       paired = TRUE,
+       alternative = "two.sided")
+```
